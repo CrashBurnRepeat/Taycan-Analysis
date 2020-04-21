@@ -71,3 +71,6 @@ perf_table.SimulationResults = [
     q_mile_t,
     q_mile_v
 ]
+
+perf_table.AbsoluteError = perf_table.SimulationResults- perf_table.CarAndDriver
+perf_table.RelativeError = (perf_table.AbsoluteError./perf_table.CarAndDriver)*100

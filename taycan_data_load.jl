@@ -57,7 +57,7 @@ fa_max_itp = LinearInterpolation(
 ra_max_itp(spd) = max(ra1_max_itp(spd), ra2_max_itp(spd))
 boosted_ra_max_itp(spd) = min(ra_max_itp(spd)*370/335, 610*15.33)
 pwr_idx = findfirst(x->x<3100, fa_max_tq[:,2]);
-pwr_poly = fit(Poly, fa_max_tq[pwr_idx:end,1], fa_max_tq[pwr_idx:end,2],4);
+pwr_poly = fit(Polynomial, fa_max_tq[pwr_idx:end,1], fa_max_tq[pwr_idx:end,2],4);
 boosted_fa_max_itp(spd) = min(440*8.05, pwr_poly(spd));
 
 #Create pt force functions
